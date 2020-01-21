@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: sec-idx-loader
+spec:
+  template:
+    spec:
+      containers:
+      - name: 2ary-loader
+        image: docker.io/library/redis-populater:1.0  
+      restartPolicy: Never
+  backoffLimit: 0
